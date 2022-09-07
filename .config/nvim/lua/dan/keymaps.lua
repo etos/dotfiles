@@ -1,17 +1,21 @@
-local keymaps = require("dan.globals.keymap")
+local keymaps = require("dan.utils.keymap")
 local nmap = keymaps.nmap
 local nnoremap = keymaps.nnoremap
+local silent = { silent = true }
 
---local silent = { silent = true }
 
-
-nnoremap("<leader>f", ":Files<Cr>")
-nnoremap("<leader>r", ":Ag<Cr>")
-nnoremap("<leader>v", ":vsp<Cr>")
-nnoremap("<leader>h", ":sp<Cr>")
 nnoremap("<leader>q", ":q<Cr>")
 nnoremap("<leader>s", ":w<Cr>")
+nnoremap("<leader>w", ":w<Cr>")
 nnoremap("<silent> <tab>", ":if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>")
+
+-- Search
+nnoremap("<leader>f", ":Files<Cr>")
+nnoremap("<leader>r", ":Ag<Cr>")
+
+-- Splits
+nnoremap("<leader>v", ":vsp<Cr>")
+nnoremap("<leader>h", ":sp<Cr>")
 
 -- Navigate panes
 nnoremap("<s-left>", "<C-W><C-H>")

@@ -4,21 +4,28 @@ local o   = vim.o
 local opt = vim.opt
 local A   = vim.api
 
-A.nvim_command("filetype plugin indent on")
 
-o.termguicolors = true
+-- Colorscheme / Column
+o.colorcolumn = 80
+vim.cmd([[
+colorscheme gruvbox
+set colorcolumn=80
+]])
+vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
 o.background = "dark"
 
+A.nvim_command("filetype plugin indent on")
+o.termguicolors = true
+
 -- Do not save when switching buffers
--- o.hidden = true
+o.hidden = true
 
 -- Decrease update time
 o.timeoutlen = 500
 o.updatetime = 200
 
--- Number of screen lines to keep above and below the cursor
+-- Lines above and below cursor
 o.scrolloff = 8
- ------au FocusGained * checktime
 
 -- Better editor UI
 o.number = true
@@ -27,30 +34,6 @@ o.relativenumber = true
 o.nu = true
 o.rnu = true
 o.signcolumn = "yes"
-o.colorcolumn = 80
---cmd([[highlight ColorColumn ctermbg=0 guibg=lightgrey]])
---A.nvim_set_hl(0, "ColorColumn", { ctermbg=0, bg=lightgrey })
---vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
-
-
-
-
-vim.cmd[[
-colorscheme gruvbox
-]]
-vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
-
---local augroup = vim.api.nvim_create_augroup('highlight_cmds', {clear = true})
-
---[[vim.api.nvim_create_autocmd('ColorScheme', {]]
-  --[[pattern = 'rubber',]]
-  --[[group = augroup,]]
-  --[[desc = 'Change string highlight',]]
-  --[[callback = function()]]
-    --[[vim.api.nvim_set_hl(0, 'String', {fg = '#FFEB95'})]]
-  --[[end]]
---[[})]]
-
 o.cursorline = true
 o.guicursor = ""
 o.guifont = "Roboto Mono:h12.5"
@@ -117,50 +100,5 @@ opt.mouse = "a"
 g.mapleader = " "
 g.maplocalleader = " "
 
-
--- minimap
-g.minimap_width = 10
-g.minimap_auto_start = 1
-g.minimap_auto_start_win_enter = 1
-
--- nerdcommenter
-cmd[[filetype plugin on]]
-
--- Ripgrep
--- brew install ripgrep
-
--- fzf
-cmd[[let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.7, 'relative': v:false, 'yoffset': 1.0 } }]]
-
--- jedi
--- disable autocompletion, cause we use deoplete for completion
-cmd[[
-let g:jedi#completions_enabled = 0
-let g:jedi#popup_on_dot = 0
-]]
--- open the go-to function in split, not another buffer
-cmd[[let g:jedi#use_splits_not_buffers = "right"]]
-
-
---[[GLOBAL
-    sys reqs:
-    brew install python
-    brew install python3
-    pip2 install neovim --upgrade
-    pip3 install neovim --upgrade]]
 g.python2_host_prog = "/usr/local/bin/python"
 g.python3_host_prog = "/usr/local/bin/python3"
-
---vim diff: show full file/context]]
-cmd[[
-if &diff
-    set diffopt=filler,context:1000000
-endif
-]]
-
--- UltiSnips
-g.UltiSnipsExpandTrigger="<tab>"
-g.UltiSnipsJumpForwardTrigger="<c-b>"
-g.UltiSnipsJumpBackwardTrigger="<c-z>"
--- If you want :UltiSnipsEdit to split your window.
-g.UltiSnipsEditSplit="vertical"
