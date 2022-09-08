@@ -71,7 +71,7 @@ o.undofile = true
 o.swapfile = false
 -- o.backupdir = "/tmp/"
 -- o.directory = "/tmp/"
-o.undodir = "~/.config/nvim/undodir"
+o.undodir = vim.fn.stdpath("config") .. "/undo"
 o.autoread = true
 -- Remember 50 items in commandline history
 o.history = 50
