@@ -10,10 +10,10 @@ o.colorcolumn = 80
 vim.cmd([[
 colorscheme gruvbox
 set colorcolumn=80
+set nohlsearch
 ]])
 vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
 o.background = "dark"
-
 A.nvim_command("filetype plugin indent on")
 o.termguicolors = true
 
@@ -102,3 +102,6 @@ g.maplocalleader = " "
 
 g.python2_host_prog = "/usr/local/bin/python"
 g.python3_host_prog = "/usr/local/bin/python3"
+
+require('dan.minimap')
+require('dan.ultisnips')
