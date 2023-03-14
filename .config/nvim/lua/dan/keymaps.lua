@@ -11,17 +11,21 @@ nnoremap("<silent> <tab>", ":if &modifiable && !&readonly && &modified <CR> :wri
 
 -- Search
 nnoremap("<leader>f", ":Files<Cr>")
-nnoremap("<leader>r", ":Ag<Cr>")
+nnoremap("<leader>r", ":Ag:<Cr>")
+nnoremap("<leader>b", ":Buffers<Cr>")
+nnoremap("<leader>h", ":History<Cr>")
 
 -- Splits
 nnoremap("<leader>v", ":vsp<Cr>")
-nnoremap("<leader>h", ":sp<Cr>")
+nnoremap("<leader>hs", ":sp<Cr>")
 
 -- Navigate panes
 nnoremap("<s-left>", "<C-W><C-H>")
 nnoremap("<s-down>", "<C-W><C-J>")
 nnoremap("<s-up>", "<C-W><C-K>")
 nnoremap("<s-right>", "<C-W><C-L>")
+nnoremap("<leader><Left>", ":bp<Cr>")
+nnoremap("<leader><Right>", ":bn<Cr>")
 
 -- Navigate tabs
 nnoremap("<s-t>", ":tabnext<Cr>")

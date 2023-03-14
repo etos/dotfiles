@@ -41,6 +41,9 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
   _G._packer.profile_output = results
 end
@@ -71,10 +74,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["ctrlp.vim"] = {
+  ale = {
     loaded = true,
-    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
-    url = "https://github.com/ctrlpvim/ctrlp.vim"
+    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
+  },
+  ["coc-pyright"] = {
+    loaded = true,
+    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/coc-pyright",
+    url = "https://github.com/fannheyward/coc-pyright"
   },
   ["fzf.vim"] = {
     loaded = true,
@@ -96,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/dan/.local/share/nvim/site/pack/packer/start/jedi-vim",
     url = "https://github.com/davidhalter/jedi-vim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["minimap.vim"] = {
     loaded = true,
     path = "/Users/dan/.local/share/nvim/site/pack/packer/start/minimap.vim",
@@ -116,6 +129,16 @@ _G.packer_plugins = {
     path = "/Users/dan/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/scrooloose/nerdtree"
   },
+  ["nvim-base16"] = {
+    loaded = true,
+    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/nvim-base16",
+    url = "https://github.com/RRethy/nvim-base16"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/dan/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -126,20 +149,15 @@ _G.packer_plugins = {
     path = "/Users/dan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["tokyonight.nvim"] = {
+  ultisnips = {
     loaded = true,
-    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
+    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
   },
   undotree = {
     loaded = true,
     path = "/Users/dan/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-flake8"] = {
     loaded = true,
@@ -160,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dan/.local/share/nvim/site/pack/packer/start/vim-ripgrep",
     url = "https://github.com/jremmen/vim-ripgrep"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/Users/dan/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   }
 }
 

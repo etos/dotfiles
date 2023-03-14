@@ -33,6 +33,7 @@ return require("packer").startup(function(use)
     -- Search / Grep
     use("jremmen/vim-ripgrep")
     use("junegunn/fzf.vim")
+    use("ggandor/leap.nvim")
 
     -- Status line
     use("nvim-lualine/lualine.nvim")

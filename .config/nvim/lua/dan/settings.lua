@@ -36,7 +36,7 @@ o.rnu = true
 o.signcolumn = "yes"
 o.cursorline = true
 o.guicursor = ""
-o.guifont = "Roboto Mono:h12.5"
+o.guifont = "Roboto Mono:h12"
 g.neovide_transparency = 0.99
 o.errorbells = false
 
