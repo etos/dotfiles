@@ -7,13 +7,16 @@ local A   = vim.api
 
 -- Colorscheme / Column
 o.colorcolumn = 80
-vim.cmd([[
-colorscheme gruvbox
+o.background = "dark"
+
+cmd([[
+colorscheme base16-espresso
+highlight LineNr guifg=#050505
+highlight VertSplit guibg=#444444 guifg=#444444
 set colorcolumn=80
 set nohlsearch
 ]])
-vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
-o.background = "dark"
+
 A.nvim_command("filetype plugin indent on")
 o.termguicolors = true
 
