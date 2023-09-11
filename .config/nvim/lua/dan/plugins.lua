@@ -19,6 +19,11 @@ return require("packer").startup(function(use)
     use("sbdchd/neoformat")
     use("scrooloose/nerdcommenter")
 
+    -- Prettier
+    use('neovim/nvim-lspconfig')
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+
     -- Git
     use("airblade/vim-gitgutter")
     use("tpope/vim-fugitive")
