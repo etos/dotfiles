@@ -4,18 +4,21 @@ local o   = vim.o
 local opt = vim.opt
 local A   = vim.api
 
+--vim.g.ale_disable_lsp = 1
 
 -- Colorscheme / Column
-o.colorcolumn = 80
+o.colorcolumn = "80"
 o.background = "dark"
 
 cmd([[
 colorscheme base16-espresso
 highlight LineNr guifg=#050505
-highlight VertSplit guibg=#444444 guifg=#444444
+highlight WinSeparator guibg=#444444 guifg=#444444
 set colorcolumn=80
 set nohlsearch
 ]])
+--highlight FoldColumn guifg=#444444 ctermfg=DarkGray
+--set foldcolumn=1
 
 A.nvim_command("filetype plugin indent on")
 o.termguicolors = true
@@ -92,10 +95,15 @@ o.splitbelow = true
 -- o.lazyredraw = true
 
 -- Better folds (don"t fold by default)
--- o.foldmethod = "indent"
--- o.foldlevelstart = 99
--- o.foldnestmax = 3
--- o.foldminlines = 1
+--o.foldmethod = "indent"
+--o.foldlevelstart = 99
+--o.foldnestmax = 3
+--o.foldminlines = 1
+--o.foldcolumn = "1"
+--o.foldlevel = 99
+--o.foldenable = true
+--o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+--o.statuscolumn = "%=%l%s%C"
 --
 opt.mouse = "a"
 

@@ -3,11 +3,18 @@ local nmap = keymaps.nmap
 local nnoremap = keymaps.nnoremap
 local silent = { silent = true }
 
-
 nnoremap("<leader>q", ":q<Cr>")
 nnoremap("<leader>s", ":w<Cr>")
 nnoremap("<leader>w", ":w<Cr>")
 nnoremap("<silent> <tab>", ":if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>")
+
+-- Redirect change operations to the blackhole avoiding clipboard clobbering
+nnoremap("D", "\"_D")
+nnoremap("d$", "\"_d$")
+nnoremap("dw", "\"_dw")
+nnoremap("dd", "\"_dd")
+nnoremap("c", "\"_c")
+nnoremap("C", "\"_C")
 
 -- Search
 nnoremap("<leader>f", ":Files<Cr>")
